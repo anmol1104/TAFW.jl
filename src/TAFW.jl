@@ -5,6 +5,7 @@ using DataFrames
 using StatsBase
 using Dates
 using Printf
+using Plot
 
 include("datastructure.jl")
 include("build.jl")
