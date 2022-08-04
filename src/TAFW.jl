@@ -44,11 +44,11 @@ function assigntraffic(; network, method, assignment=:UE, tol=1e-5, maxiters=20,
 end
 
 """
-    compare(network; methods, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:on)
+    compare(; network, methods, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:on)
 
 Compare assignment methods.
 """
-function compare(network; methods, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:on)
+function compare(; network, methods, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:on)
     fig = plot()
     
     for method in methods
@@ -61,11 +61,11 @@ function compare(network; methods, assignment=:UE, tol=1e-5, maxiters=20, maxrun
 end
 
 """
-    getrg(network, solution::DataFrame)
+    getrg(; network, solution::DataFrame)
 
 Returns relative gap for `network` given traffic assignment `solution`.
 """
-function getrg(network, solution::DataFrame)
+function getrg(; network, solution::DataFrame)
     G = build(network, :none)
     N, A, O, K = G.N, G.A, G.O, G.K
     
