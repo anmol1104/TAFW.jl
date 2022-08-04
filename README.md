@@ -1,7 +1,7 @@
 # TAFW
 Traffic Assignment by Frank-Wolfe algorithm with pure method, Fukushima method, and Conjugate method options available to determine point of sight.
 
-For furhter details, refer to:
+For futher details, refer to:
 
 Fukushima, M. (1984). A modified Frank-Wolfe algorithm for solving the traffic assignment problem. Transportation Research Part B: Methodological, 18(2), 169-177.
 
