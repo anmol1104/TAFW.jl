@@ -22,4 +22,6 @@ a named tuple with keys `:metadata`, `:report`, and `:output`
 - `report::DataFrame` : A log of total network flow, total network cost, and run time for every iteration
 - `output::DataFrame` : Flow and cost for every arc from the final iteration
 
-`assigntraffic(network; method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)`
+```julia
+assigntraffic(network; method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
+```
