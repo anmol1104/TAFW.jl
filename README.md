@@ -8,8 +8,10 @@ Fukushima, M. (1984). A modified Frank-Wolfe algorithm for solving the traffic a
 Mitradjieva, M., & Lindberg, P. O. (2013). The stiff is moving—conjugate direction Frank-Wolfe Methods with applications to traffic assignment. Transportation Science, 47(2), 280-293.
 
 ```julia
-assigntraffic(network; method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
+assigntraffic(; network, method, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
 ```
+
+Frank-Wolfe method for traffic assignment.
 
 ## Returns
 a named tuple with keys `:metadata`, `:report`, and `:output`
@@ -19,7 +21,7 @@ a named tuple with keys `:metadata`, `:report`, and `:output`
 
 ## Arguments
 - `network::String`         : Network
-- `method::Symbol=:FW`      : One of `:FW`, `:fukushimaFW`, `:conjugateFW`
+- `method::Symbol`          : One of `:pureFW`, `:fukushimaFW`, `:conjugateFW`
 - `assignment::Symbol=:UE`  : Assignment type; one of `:UE`, `:SO`
 - `tol::Float64=1e-5`       : Tolerance level for relative gap
 - `maxiters::Int64=20`      : Maximum number of iterations
