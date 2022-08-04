@@ -7,7 +7,7 @@ Fukushima, M. (1984). A modified Frank-Wolfe algorithm for solving the traffic a
 
 Mitradjieva, M., & Lindberg, P. O. (2013). The stiff is moving—conjugate direction Frank-Wolfe Methods with applications to traffic assignment. Transportation Science, 47(2), 280-293.
 
-# Arguments
+## Arguments
 - `network::String`         : Network
 - `method::Symbol=:FW`      : One of `:FW`, `:fukushimaFW`, `:conjugateFW`
 - `assignment::Symbol=:UE`  : Assignment type; one of `:UE`, `:SO`
@@ -16,7 +16,7 @@ Mitradjieva, M., & Lindberg, P. O. (2013). The stiff is moving—conjugate direc
 - `maxruntime::Int64=300`   : Maximum algorithm run time (seconds)
 - `log::Symbol`             : Log iterations (one of `:off`, `:on`)
 
-# Returns
+## Returns
 a named tuple with keys `:metadata`, `:report`, and `:output`
 - `metadata::String`  : Text defining the traffic assignment run 
 - `report::DataFrame` : A log of total network flow, total network cost, and run time for every iteration
