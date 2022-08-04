@@ -15,9 +15,9 @@ include("fukushima.jl")
 include("conjugate.jl")
 
 """
-    assigntraffic(network; method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
+    assigntraffic(; network, method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
 
-Fukushima Frank-Wolfe method for traffic assignment.
+Frank-Wolfe method for traffic assignment.
 
 # Returns
 a named tuple with keys `:metadata`, `:report`, and `:output`
@@ -27,14 +27,14 @@ a named tuple with keys `:metadata`, `:report`, and `:output`
 
 # Arguments
 - `network::String`         : Network
-- `method::Symbol=:FW`      : One of `:FW`, `:fukushimaFW`, `:conjugateFW`
+- `method::Symbol`          : One of `:pureFW`, `:fukushimaFW`, `:conjugateFW`
 - `assignment::Symbol=:UE`  : Assignment type; one of `:UE`, `:SO`
 - `tol::Float64=1e-5`       : Tolerance level for relative gap
 - `maxiters::Int64=20`      : Maximum number of iterations
 - `maxruntime::Int64=300`   : Maximum algorithm run time (seconds)
 - `log::Symbol`             : Log iterations (one of `:off`, `:on`)
 """
-function assigntraffic(network; method=:FW, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
+function assigntraffic(; network, method, assignment=:UE, tol=1e-5, maxiters=20, maxruntime=300, log=:off)
     G = TAFW.build(network, assignment)
     if     method == :pureFW      return pureFW(G, tol, maxiters, maxruntime, log)
     elseif method == :fukushimaFW return fukushimaFW(G, tol, maxiters, maxruntime, log)
