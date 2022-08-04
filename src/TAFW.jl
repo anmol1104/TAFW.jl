@@ -1,5 +1,12 @@
 module TAFW
 
+using CSV
+using DataFrames
+using StatsBase
+using Dates
+using Printf
+
+include("datastructure.jl")
 include("build.jl")
 include("func.jl")
 include("pure.jl")
