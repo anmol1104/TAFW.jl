@@ -5,7 +5,6 @@ Returns network as a graph of nodes, arcs, and relevant properties
 """
 function build(network, assignment)
     #= ────────────────────────────────────────────────────────────────────────────────
-    # NOTE: 
         Node values must match node location (index) in the set of nodes N. This 
         requires node values to start from 1 increasing linearly to the maximum value.
     ──────────────────────────────────────────────────────────────────────────────── =#
